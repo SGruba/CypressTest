@@ -26,8 +26,8 @@ describe('Shopping Cart Test', function() {
         cy.get('.checkout_button').click()
 
         // Fill in checkout details
-        cy.get('#first-name').type('Tester')
-        cy.get('#last-name').type('Testerovski')
+        cy.get('#first-name').type('Joe')
+        cy.get('#last-name').type('Tester')
         cy.get('#postal-code').type('21000')
         cy.get('.cart_button').click()
 
@@ -38,6 +38,6 @@ describe('Shopping Cart Test', function() {
         cy.contains('THANK YOU FOR YOUR ORDER').should('be.visible')
 
         // Step 5: Cypress will automatically close the browser if the "run" command is used
-        // "cypress run --browser chrome --headed --spec .\cypress\e2e\Buy_UserStory.cy.js"
+        // "cypress run --browser chrome --headed --spec .\cypress\e2e\BuyUserStory.cy.js"
     })
 })
