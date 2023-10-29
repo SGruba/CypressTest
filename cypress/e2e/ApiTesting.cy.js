@@ -1,4 +1,4 @@
-// Combined tasks 1,2 and 3
+// Combined Tasks 1,2 and 3
 
 describe('User list API testing', () => {
     // TEST 1: Retrieve a list of users and verify that at least one user is being returned.
