@@ -2,7 +2,7 @@
 is being returned. The test failswhen a response is not 
 returned, or the list contains zero users. */
 
-describe('User list API test', () => {
+describe('User list API test 1', () => {
     it('Should retrieve a list of users, failed if no response or empty list', () => {
       // request command makes an HTTP GET request to the specified URL.
       cy.request('GET', 'https://gorest.co.in/public/v2/users')
