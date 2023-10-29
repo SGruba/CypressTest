@@ -2,7 +2,7 @@
 not returned, or the list contains zero users. */
 
 describe('User list API test 3', () => {
-    it('Should retrieve a list of users and check if a user starts with C, failed if no response or no C user', () => {
+    it('Should retrieve a list of users, than print it out in console. Failed if no response or empty list', () => {
       // request command makes an HTTP GET request to the specified URL.
       cy.request('GET', 'https://gorest.co.in/public/v2/users')
         .should((response) => {
@@ -15,7 +15,7 @@ describe('User list API test 3', () => {
             // Check that list is not empty.
             expect(users).to.not.be.empty;
 
-            // Printing out the list
+            // Printing out the list in the browser console
             console.log(users)
         });
     });
