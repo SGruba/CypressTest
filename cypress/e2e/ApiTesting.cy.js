@@ -12,7 +12,7 @@ describe('User list API testing', () => {
             
             expect(response.status).to.eq(200); // Check that the HTTP status code is 200.
             
-            // Check that the response body contains a non-empty `data` property, which represents the list of users.
+            // Check that the response body, which represents the list of users, is not empty.
             expect(response.body).to.not.be.empty;
         });
     });
@@ -72,7 +72,7 @@ describe('User list API testing', () => {
             // Printing out the list in the browser console
             console.log(users)
 
-            // Printing out the list, per-user
+            // Printing out the list, per-user, in the browser console
             var num = 1;
             console.log('List of Users:');
             users.forEach((user) => {
