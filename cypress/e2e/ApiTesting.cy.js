@@ -25,6 +25,9 @@ describe('User list API testing', () => {
             
             expect(response.status).to.eq(200); // Check HTTP response
             const users = response.body; // Extract the list of users from the response.
+
+            // Check that list is not empty.
+            expect(users).to.not.be.empty;
   
             /* This is a basic version of search where only first symbol is getting checked:
             const userWithC = users.find((user) => user.name.startsWith('C'));
@@ -44,7 +47,7 @@ describe('User list API testing', () => {
             if (userWithC) {
               console.log("At least one user with a starting 'C' in their name, for example: ", userWithC);
             } else {
-              console.log("No word starts with 'C'");
+              console.log("No users with a name starting with 'C'");
             }
 
             // Check that such a user exists.
