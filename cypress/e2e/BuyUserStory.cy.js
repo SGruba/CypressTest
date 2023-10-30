@@ -2,9 +2,8 @@
 
 describe('Shopping Cart Test', function() {
     it('should navigate, login, buy an item and checkout', function() {
-        /* Navigate to the site. "v1/index.html" was added to bypass certain authentication measures on 
-        the demo site. "https://www.saucedemo.com" kept returning 401 Auth error.*/
-        cy.visit('https://www.saucedemo.com/v1/index.html')
+        // Navigate to the site.
+        cy.visit('https://www.saucedemo.com/')
         
         // Step 1: Ensure the login page is loaded
         cy.get('.login_logo').should('be.visible')
@@ -35,7 +34,7 @@ describe('Shopping Cart Test', function() {
         cy.get('.cart_button').click()
 
         // Step 4: Ensure checkout is complete
-        cy.contains('THANK YOU FOR YOUR ORDER').should('be.visible')
+        cy.contains('Thank you for your order!').should('be.visible')
 
         // Step 5: Cypress will automatically close the browser if the "run" command is used
         // "cypress run --browser chrome --headed --spec .\cypress\e2e\BuyUserStory.cy.js"
