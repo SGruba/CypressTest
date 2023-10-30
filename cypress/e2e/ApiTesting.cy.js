@@ -3,7 +3,7 @@
 describe('User list API testing', () => {
     
     const userUrl = Cypress.env('userUrl');
-    let users; // A variable to store the users for all tests.
+    let users;
 
     beforeEach(() => {
         // Before each test, make the GET request and store the response in the users variable.
@@ -13,13 +13,13 @@ describe('User list API testing', () => {
         });
     });
 
-    // TEST 1: Retrieve a list of users and verify that at least one user is being returned.
+    // TEST 1:
     it('Should retrieve a list of users, failed if no response or empty list', () => {
         // Check that list of users is not empty.
         expect(users).to.not.be.empty;
     });
 
-    // TEST 2: Retrieve a list of users and verify that there is at least one user whose name starts with 'C'.
+    // TEST 2:
     it('Should retrieve a list of users and check if a user starts with C, failed if no response or no C user', () => {
 
         expect(users).to.not.be.empty;
@@ -28,10 +28,7 @@ describe('User list API testing', () => {
         const userWithC = users.find((user) => user.name.startsWith('C'));
         */
 
-        /* This is a more advanced version where each word is checked. 
-        Now, I am aware this system might misfire on a title or something else, but it
-        should catch any names that are written after titles.
-        */
+        // This will check every word in Name, so that titles don't intervene with the check.
         const wordStartsWithC = (str) => {
             const words = str.split(' ');
             return words.some(word => /^C/i.test(word));
@@ -50,10 +47,9 @@ describe('User list API testing', () => {
 
     });
 
-    // TEST 3: Retrieve a list of users and display it in the console.
+    // TEST 3:
     it('Should retrieve a list of users, than print it out in console. Failed if no response or empty list', () => {
 
-        // Check that list is not empty.
         expect(users).to.not.be.empty;
     
         console.log('List of Users:');
@@ -67,6 +63,5 @@ describe('User list API testing', () => {
         users.forEach((user) => {
           console.log(num++, user.name);
         });
-
     });
 });
